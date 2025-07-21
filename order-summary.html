@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Order Summary - Arlene Carandang Style Studio</title>
+    <meta name="description" content="Order Summary and Confirmation - Arlene Carandang Style Studio. Review your order, confirm details, and complete your payment securely.">
+    <link rel="icon" type="image/png" href="image/FAVICON.png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Quicksand:500,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-dark: #18213a;
+            --brand-accent: #a14e7c;
+            --brand-accent2: #f8bcbc;
+            --brand-light: #fcfcfc;
+            --brand-bg: #f4f7fa;
+            --border-radius: 18px;
+            --shadow: 0 8px 32px rgba(24,33,58,0.10);
+            --brand-spacing: 1.7rem;
+            --gradient: linear-gradient(to right, #f8bcbc 0%, #a14e7c 100%);
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', 'Quicksand', Arial, Helvetica, sans-serif;
+            background: var(--brand-bg);
+            color: var(--brand-dark);
+        }
+        header {
+            background: var(--brand-light);
+            box-shadow: var(--shadow);
+            margin-bottom: 0;
+            border-bottom: 3px solid var(--brand-accent2);
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+        .header-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.3rem var(--brand-spacing) 1.1rem var(--brand-spacing);
+        }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+        .logo-img img {
+            height: 68px;
+            width: 68px;
+            border-radius: 13px;
+            background: var(--brand-bg);
+            box-shadow: 0 2px 18px rgba(161,78,124,0.07);
+        }
+        .logo-title {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        .logo-title .main {
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+            letter-spacing: 0.02em;
+        }
+        .logo-title .sub {
+            font-size: 1.08rem;
+            font-weight: 500;
+            color: var(--brand-accent);
+            letter-spacing: 0.38em;
+            margin-top: 0.12rem;
+        }
+        main {
+            max-width: 650px;
+            margin: 2.5rem auto 0 auto;
+            background: var(--brand-light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2.1rem 1.3rem 2.2rem 1.3rem;
+        }
+        .summary-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--brand-accent);
+            margin-bottom: 0.7rem;
+            letter-spacing: 0.02em;
+        }
+        .summary-desc {
+            text-align: center;
+            font-size: 1.1rem;
+            font-family: 'Quicksand', Arial, sans-serif;
+            color: #444;
+            margin-bottom: 1.8rem;
+        }
+        .order-section {
+            background: var(--brand-bg);
+            border-radius: 13px;
+            padding: 1.2rem 1rem 1.25rem 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 12px rgba(161,78,124,0.06);
+        }
+        .order-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 1.1rem;
+            letter-spacing: 0.02em;
+        }
+        .order-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.2rem;
+        }
+        .order-table th, .order-table td {
+            padding: 0.65rem 0.7rem;
+            text-align: left;
+            font-family: 'Quicksand', Arial, sans-serif;
+            font-size: 1.03rem;
+        }
+        .order-table th {
+            background: var(--brand-accent2);
+            color: var(--brand-dark);
+            font-weight: 700;
+            border-radius: 7px;
+        }
+        .order-table tr {
+            background: var(--brand-light);
+        }
+        .order-table tr:not(:last-child) {
+            border-bottom: 1px solid #ececec;
+        }
+        .order-total-row {
+            font-weight: 700;
+            color: var(--brand-accent);
+            font-size: 1.12rem;
+            background: #fff6fa;
+        }
+        .customer-info {
+            margin-bottom: 1.1rem;
+        }
+        .customer-info-title {
+            font-size: 1.13rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 0.4rem;
+        }
+        .customer-info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .customer-info-table td {
+            padding: 0.55rem 0.5rem;
+            font-size: 1.03rem;
+            color: #222;
+            font-family: 'Quicksand', Arial, sans-serif;
+        }
+        .instructions-section {
+            background: var(--gradient);
+            border-radius: 13px;
+            padding: 1.5rem 1.1rem 1.3rem 1.1rem;
+            margin-bottom: 2.2rem;
+            color: var(--brand-dark);
+            box-shadow: 0 1px 12px rgba(161,78,124,0.08);
+        }
+        .instructions-title {
+            font-size: 1.21rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--brand-dark);
+        }
+        .instructions-list {
+            font-size: 1.07rem;
+            font-family: 'Quicksand', Arial, sans-serif;
+            color: #222;
+            margin: 0 0 0 1.1rem;
+            padding: 0;
+        }
+        .instructions-list li {
+            margin-bottom: 1rem;
+        }
+        .confirm-btn {
+            display: block;
+            margin: 1.6rem auto 0 auto;
+            padding: 0.8rem 2.6rem;
+            background: var(--brand-accent);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.12rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.17s, box-shadow 0.17s;
+            box-shadow: 0 2px 14px rgba(24,33,58,0.10);
+            font-family: 'Montserrat', Arial, sans-serif;
+            letter-spacing: 0.02em;
+        }
+        .confirm-btn:hover {
+            background: var(--brand-dark);
+        }
+        .confirmation-message {
+            display: none;
+            background: #fff6fa;
+            border-radius: 13px;
+            color: var(--brand-dark);
+            box-shadow: 0 2px 14px rgba(161,78,124,0.08);
+            padding: 2.2rem 1.2rem 1.4rem 1.2rem;
+            text-align: center;
+            margin-top: 2.3rem;
+            font-size: 1.15rem;
+            font-family: 'Quicksand', Arial, sans-serif;
+            animation: fadeInConf 0.4s;
+        }
+        @keyframes fadeInConf {
+            from { opacity: 0; transform: translateY(60px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @media (max-width: 900px) {
+            main {
+                padding: 1.2rem 0.4rem;
+            }
+            .header-wrapper {
+                flex-direction: column;
+                gap: 1.1rem;
+                padding: 1.3rem 0.8rem 1.1rem 0.8rem;
+            }
+        }
+        @media (max-width: 700px) {
+            main {
+                max-width: 98vw;
+                padding: 1.2rem 0.2rem 1.2rem 0.2rem;
+            }
+            .order-section, .instructions-section, .confirmation-message {
+                padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+            }
+            .summary-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <script>
+        // Demo: Fill summary/order detail, confirm logic
+        document.addEventListener('DOMContentLoaded', function() {
+            // Demo data: would be populated dynamically from backend/session
+            var orderItems = [
+                { name: "Casual Blouse", qty: 2, price: 499.00 },
+                { name: "Woven Sandals", qty: 1, price: 799.00 }
+            ];
+            var customerInfo = {
+                name: "Clarisse Rivera",
+                phone: "+63 936 921 8475",
+                email: "clarisse.rivera@email.com",
+                address: "#27 Rosas Street, Brgy. Cupang, Muntinlupa"
+            };
+            var paymentMethod = "GCash";
+            // Fill order items table
+            var tbody = document.getElementById('order-items-body');
+            var total = 0;
+            orderItems.forEach(function(item){
+                var tr = document.createElement('tr');
+                var tdName = document.createElement('td');
+                tdName.textContent = item.name;
+                var tdQty = document.createElement('td');
+                tdQty.textContent = item.qty;
+                var tdPrice = document.createElement('td');
+                tdPrice.textContent = "₱" + item.price.toFixed(2);
+                var tdSubtotal = document.createElement('td');
+                var subtotal = item.qty * item.price;
+                tdSubtotal.textContent = "₱" + subtotal.toFixed(2);
+                total += subtotal;
+                tr.appendChild(tdName);
+                tr.appendChild(tdQty);
+                tr.appendChild(tdPrice);
+                tr.appendChild(tdSubtotal);
+                tbody.appendChild(tr);
+            });
+            // Add total row
+            var trTotal = document.createElement('tr');
+            trTotal.className = 'order-total-row';
+            trTotal.innerHTML = '<td colspan="3" style="text-align:right;">Total</td><td>₱' + total.toFixed(2) + '</td>';
+            tbody.appendChild(trTotal);
+            // Fill customer info
+            var custInfoTable = document.getElementById('customer-info-table');
+            custInfoTable.innerHTML =
+                '<tr><td>Name:</td><td>' + customerInfo.name + '</td></tr>' +
+                '<tr><td>Phone:</td><td>' + customerInfo.phone + '</td></tr>' +
+                '<tr><td>Email:</td><td>' + customerInfo.email + '</td></tr>' +
+                '<tr><td>Address:</td><td>' + customerInfo.address + '</td></tr>' +
+                '<tr><td>Payment Method:</td><td>' + paymentMethod + '</td></tr>';
+            // Confirm button logic
+            var confirmBtn = document.getElementById('confirm-btn');
+            var messageBox = document.getElementById('confirmation-message');
+            confirmBtn.addEventListener('click', function(){
+                messageBox.style.display = 'block';
+                confirmBtn.style.display = 'none';
+                window.scrollTo({ top: messageBox.offsetTop - 60, behavior: 'smooth' });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+            <div class="logo-box">
+                <div class="logo-img">
+                    <img src="image/LOGO.png" alt="Arlene Carandang Style Studio Logo">
+                </div>
+                <div class="logo-title">
+                    <span class="main">ARLENE CARANDANG</span>
+                    <span class="sub">STYLE STUDIO</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="summary-title">Order Summary</div>
+        <div class="summary-desc">
+            Thank you for choosing Arlene Carandang Style Studio! Please review your order details below. Once you confirm, our team will personally reach out to ensure every detail is perfect before you proceed to payment.
+        </div>
+        <section class="order-section">
+            <div class="order-section-title">Your Selected Items</div>
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody id="order-items-body">
+                    <!-- Filled by JS -->
+                </tbody>
+            </table>
+        </section>
+        <section class="order-section">
+            <div class="customer-info-title">Customer Information</div>
+            <table class="customer-info-table" id="customer-info-table">
+                <!-- Filled by JS -->
+            </table>
+        </section>
+        <section class="instructions-section">
+            <div class="instructions-title">Next Steps</div>
+            <ul class="instructions-list">
+                <li>Once you confirm your order, our staff will contact you to finalize product details, such as colors and availability.</li>
+                <li>After confirmation, a secure payment link will be sent to your email or phone. Please complete your payment within 24 hours to avoid automatic cancellation.</li>
+                <li>If you have any questions or special requests, feel free to reply to our message or contact us directly.</li>
+            </ul>
+            <button class="confirm-btn" id="confirm-btn" type="button">Confirm &amp; Submit Order</button>
+        </section>
+        <div class="confirmation-message" id="confirmation-message">
+            <strong>Your order has been submitted!</strong><br><br>
+            Thank you for shopping with us.<br>
+            One of our team members will reach out soon to verify your order details and confirm availability.<br>
+            Once you review and confirm, we’ll send a secure payment link based on your chosen payment method.<br>
+            <br>
+            <span style="color:var(--brand-accent);font-weight:700;">Please complete your payment within 24 hours to secure your items.</span><br>
+            If payment is not received within this timeframe, your order will be automatically cancelled.<br>
+            <br>
+            For questions or assistance, contact us at <a href="mailto:contact@arlenecarandangstudio.com">contact@arlenecarandangstudio.com</a> or call/text <strong>+63 936 921 8475</strong>.<br>
+            <br>
+            We appreciate your trust in Arlene Carandang Style Studio!
+        </div>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="refund-policy.html">Refund Policy</a>
+        </div>
+        <div class="footer-info">
+            &copy; 2025 Arlene Carandang Style Studio. All rights reserved. | #27 Rosas Street, Brgy. Cupang, City of Muntinlupa, NCR, PH | Tel: +63 936 921 8475
+        </div>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/arlenecarandangstudio" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/arlenecarandangstudio" target="_blank">Facebook</a>
+        </div>
+    </footer>
+</body>
+</html>
