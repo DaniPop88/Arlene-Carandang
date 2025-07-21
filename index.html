@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlene Carandang Style Studio</title>
+    <meta name="description" content="Fashion & Accessories for Modern Filipinas. Shop curated collections, book styling sessions, and elevate your style at Arlene Carandang Style Studio.">
+    <link rel="icon" type="image/png" href="image/FAVICON.png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Quicksand:500,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-dark: #18213a;
+            --brand-accent: #a14e7c;
+            --brand-accent2: #f8bcbc;
+            --brand-light: #fcfcfc;
+            --brand-bg: #f4f7fa;
+            --border-radius: 18px;
+            --shadow: 0 8px 32px rgba(24,33,58,0.10);
+            --brand-spacing: 1.7rem;
+            --gradient: linear-gradient(to right, #f8bcbc 0%, #a14e7c 100%);
+            --gradient2: linear-gradient(120deg, #fff 0%, #f8bcbc 50%, #a14e7c 100%);
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', 'Quicksand', Arial, Helvetica, sans-serif;
+            background: var(--brand-bg);
+            color: var(--brand-dark);
+        }
+        header {
+            background: var(--brand-light);
+            box-shadow: var(--shadow);
+            margin-bottom: 0;
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            width: 100%;
+            transition: box-shadow 0.3s;
+            border-bottom: 4px solid var(--brand-accent2);
+        }
+        .header-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.6rem var(--brand-spacing) 1.2rem var(--brand-spacing);
+            width: 100%;
+        }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .logo-img {
+            height: 72px;
+            width: 72px;
+            min-width: 72px;
+            display: flex;
+            align-items: center;
+        }
+        .logo-img img {
+            height: 72px;
+            width: 72px;
+            object-fit: contain;
+            display: block;
+            border: none;
+            border-radius: 13px;
+            background: var(--brand-bg);
+            box-shadow: 0 2px 18px rgba(161,78,124,0.07);
+        }
+        .logo-title {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        .logo-title .main {
+            font-size: 2.05rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+            letter-spacing: 0.03em;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .logo-title .sub {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--brand-accent);
+            letter-spacing: 0.41em;
+            margin-top: 0.10rem;
+            font-family: 'Quicksand', Arial, sans-serif;
+        }
+        nav {
+            display: flex;
+            gap: 2.2rem;
+            align-items: center;
+        }
+        nav a {
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--brand-dark);
+            padding: 0.38rem 1.1rem;
+            border-radius: 10px;
+            background: none;
+            transition: background 0.18s, color 0.18s;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        nav a:hover {
+            background: var(--brand-accent2);
+            color: var(--brand-dark);
+        }
+        .burger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 47px;
+            height: 47px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            margin-left: 1.5rem;
+        }
+        .burger span {
+            display: block;
+            height: 5px;
+            width: 34px;
+            background: var(--brand-dark);
+            border-radius: 3px;
+            margin: 4px 0;
+            transition: all 0.3s;
+        }
+        @media (max-width: 900px) {
+            main {
+                padding: 1.2rem 0.4rem;
+            }
+            .products {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+            .header-wrapper {
+                flex-direction: column;
+                gap: 0.6rem;
+                padding: 1.6rem 0.8rem 1.2rem 0.8rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .header-wrapper {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1.2rem 0.8rem 1.2rem 0.8rem;
+            }
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 260px;
+                background: var(--brand-light);
+                box-shadow: -2px 0 12px rgba(24,33,58,0.16);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 0;
+                padding: 5.2rem 1.3rem 1.3rem 1.3rem;
+                border-radius: 0 0 0 var(--border-radius);
+                transition: right 0.32s ease;
+                z-index: 200;
+            }
+            nav a {
+                width: 100%;
+                margin-bottom: 1.3rem;
+                font-size: 1.17rem;
+                padding: 0.62rem 0.5rem;
+            }
+            nav.show {
+                right: 0;
+            }
+            .burger {
+                display: flex;
+            }
+        }
+        @media (max-width: 600px) {
+            .logo-img, .logo-img img {
+                height: 57px;
+                width: 57px;
+                min-width: 57px;
+            }
+            .logo-title .main {
+                font-size: 1.29rem;
+            }
+            .logo-title .sub {
+                font-size: 0.93rem;
+            }
+            .intro h1 {
+                font-size: 1.57rem;
+            }
+            .cart-popup-content {
+                width: 96vw;
+                max-width: 430px;
+            }
+            .products {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                width: 89vw;
+            }
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--brand-light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2.8rem 2vw;
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            background: var(--gradient);
+            border-radius: var(--border-radius);
+            padding: 2.4rem 1.1rem 2.1rem 1.1rem;
+            color: var(--brand-dark);
+            box-shadow: 0 2px 22px rgba(161,78,124,0.09);
+        }
+        .intro h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.01em;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .intro h2 {
+            font-weight: 500;
+            font-size: 1.35rem;
+            color: var(--brand-accent);
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.01em;
+            font-family: 'Quicksand', Arial, sans-serif;
+        }
+        .intro p {
+            font-size: 1.13rem;
+            margin-bottom: 0.7rem;
+            color: #444;
+            font-family: 'Quicksand', Arial, sans-serif;
+        }
+        .intro .slogan {
+            font-weight: 700;
+            font-size: 1.09rem;
+            color: var(--brand-accent);
+            margin-top: 0.7rem;
+            font-family: 'Quicksand', Arial, sans-serif;
+        }
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        .section h3 {
+            color: var(--brand-accent);
+            margin-bottom: 1.1rem;
+            font-size: 1.42rem;
+            font-weight: 700;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .about-values {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .about-value {
+            flex: 1 1 220px;
+            background: var(--brand-bg);
+            border-radius: var(--border-radius);
+            padding: 1.15rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 8px rgba(24,33,58,0.05);
+            font-size: 1.09rem;
+            color: var(--brand-dark);
+            font-family: 'Quicksand', Arial, sans-serif;
+        }
+        .about-value span {
+            font-size: 1.7rem;
+            margin-right: 0.6rem;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.1rem;
+        }
+        .product-card {
+            background: var(--gradient2);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 16px rgba(161,78,124,0.13);
+            padding: 1.3rem 1.2rem 1.3rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: box-shadow 0.15s;
+        }
+        .product-card:hover {
+            box-shadow: 0 8px 32px rgba(161,78,124,0.23);
+        }
+        .product-card img {
+            width: 100%;
+            max-width: 170px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin-bottom: 0.9rem;
+            background: #dadada;
+            box-shadow: 0 2px 14px rgba(24,33,58,0.08);
+        }
+        .product-title {
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 0.3rem;
+            font-size: 1.12rem;
+            text-align: center;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .product-desc {
+            font-size: 1.02rem;
+            color: #444;
+            margin-bottom: 0.2rem;
+            text-align: center;
+            font-family: 'Quicksand', Arial, sans-serif;
+        }
+        .product-meta {
+            font-size: 0.97rem;
+            color: #666;
+            margin-bottom: 0.7rem;
+            text-align: center;
+            font-family: 'Quicksand', Arial, sans-serif;
+        }
+        .product-price {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--brand-accent);
+            margin-bottom: 0.8rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .product-card button {
+            padding: 0.6rem 1.32rem;
+            background: var(--brand-accent);
+            color: #fff;
+            border: none;
+            border-radius: 9px;
+            font-size: 1.03rem;
+            cursor: pointer;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            transition: background 0.2s, box-shadow 0.2s;
+            font-family: 'Montserrat', Arial, sans-serif;
+            box-shadow: 0 1px 6px rgba(161,78,124,0.09);
+        }
+        .product-card button:hover {
+            background: var(--brand-dark);
+            box-shadow: 0 2px 14px rgba(24,33,58,0.11);
+        }
+        .services-list,
+        .contact-list,
+        .faq-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .services-list li,
+        .contact-list li,
+        .faq-list li {
+            margin-bottom: 0.7rem;
+            font-size: 1.04rem;
+            font-family: 'Quicksand', Arial, sans-serif;
+        }
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .testimonial-card {
+            flex: 1 1 270px;
+            background: var(--brand-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 18px rgba(24,33,58,0.13);
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+            font-size: 1.12rem;
+            font-family: 'Quicksand', Arial, sans-serif;
+            border-left: 8px solid var(--brand-accent2);
+        }
+        .testimonial-card cite {
+            display: block;
+            margin-top: 0.7rem;
+            font-size: 1.03rem;
+            color: var(--brand-accent);
+            font-style: normal;
+        }
+        .business-info {
+            background: var(--brand-bg);
+            border-radius: var(--border-radius);
+            padding: 1.15rem 1rem 1.15rem 1rem;
+            margin-bottom: 2rem;
+            font-size: 1.07rem;
+            font-family: 'Quicksand', Arial, sans-serif;
+        }
+        footer {
+            background: var(--brand-dark);
+            color: #fff;
+            text-align: center;
+            padding: 1.3rem 0 0.7rem 0;
+            margin-top: 2.5rem;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            box-shadow: 0 -2px 18px rgba(24,33,58,0.07);
+        }
+        .footer-links {
+            margin-bottom: 0.8rem;
+        }
+        .footer-links a {
+            color: #fff;
+            text-decoration: underline;
+            margin: 0 1.1rem;
+            font-size: 1.1rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .footer-links a:hover {
+            color: var(--brand-accent2);
+        }
+        .footer-info {
+            font-size: 1.03rem;
+            margin-bottom: 0.6rem;
+            font-family: 'Quicksand', Arial, sans-serif;
+        }
+        .footer-social a {
+            color: var(--brand-accent2);
+            margin: 0 0.56rem;
+            font-size: 1.14rem;
+            text-decoration: none;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .footer-social a:hover {
+            color: #fff;
+        }
+        .burger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        .burger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .burger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(24,33,58,0.25);
+            z-index: 150;
+        }
+        .nav-overlay.show {
+            display: block;
+        }
+        /* Floating Cart Button Styles */
+        .cart-fab {
+            position: fixed;
+            bottom: 36px;
+            right: 36px;
+            z-index: 999;
+            background: var(--brand-accent);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(161,78,124,0.23);
+            cursor: pointer;
+            transition: background 0.22s, box-shadow 0.22s, transform 0.16s;
+            font-size: 2.4rem;
+            border: 4px solid var(--brand-light);
+        }
+        .cart-fab:hover {
+            background: var(--brand-dark);
+            box-shadow: 0 12px 38px rgba(24,33,58,0.27);
+            transform: scale(1.07);
+        }
+        @media (max-width: 600px) {
+            .cart-fab {
+                bottom: 18px;
+                right: 18px;
+                width: 54px;
+                height: 54px;
+                font-size: 1.7rem;
+                border-width: 2px;
+            }
+        }
+        /* Cart Popup Styles */
+        .cart-popup-bg {
+            display: none;
+            position: fixed;
+            left: 0; top: 0; right: 0; bottom: 0;
+            background: rgba(24,33,58,0.22);
+            z-index: 2001;
+        }
+        .cart-popup-bg.show {
+            display: block;
+        }
+        .cart-popup-content {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--brand-light);
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 38px rgba(24,33,58,0.23);
+            min-width: 370px;
+            max-width: 410px;
+            padding: 2.1rem 1.5rem 1.3rem 1.5rem;
+            z-index: 2002;
+            display: none;
+            flex-direction: column;
+            animation: fadeInCart 0.33s;
+        }
+        .cart-popup-content.show {
+            display: flex;
+        }
+        @keyframes fadeInCart {
+            from { transform: translate(-50%, 60px) scale(0.95); opacity: 0; }
+            to { transform: translate(-50%, 0) scale(1); opacity: 1; }
+        }
+        .cart-popup-header {
+            font-size: 1.23rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 0.67rem;
+            letter-spacing: 0.04em;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .cart-popup-items {
+            margin-bottom: 1.1rem;
+            padding: 0;
+            max-height: 180px;
+            overflow-y: auto;
+            background: var(--brand-bg);
+            border-radius: 10px;
+            box-shadow: 0 1px 6px rgba(161,78,124,0.05);
+        }
+        .cart-popup-items li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+            font-size: 1.09rem;
+            margin-bottom: 0.34rem;
+            color: var(--brand-dark);
+            padding: 0.55rem 1rem;
+            border-bottom: 1px solid #ececec;
+        }
+        .cart-popup-items li:last-child {
+            border-bottom: none;
+        }
+        .cart-popup-item-title {
+            font-weight: 500;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .cart-popup-item-remove {
+            background: var(--brand-accent2);
+            color: var(--brand-dark);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.97rem;
+            font-weight: 700;
+            padding: 0.32rem 0.8rem;
+            margin-left: 1rem;
+            transition: background 0.18s, color 0.18s;
+        }
+        .cart-popup-item-remove:hover {
+            background: var(--brand-accent);
+            color: #fff;
+        }
+        .cart-popup-total {
+            font-weight: 700;
+            color: var(--brand-accent);
+            margin-bottom: 1.2rem;
+            font-size: 1.14rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .cart-popup-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.7rem;
+        }
+        .cart-popup-close,
+        .cart-popup-checkout {
+            padding: 0.75rem 1.4rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.07rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.22s;
+            font-family: 'Montserrat', Arial, sans-serif;
+            box-shadow: 0 1px 6px rgba(24,33,58,0.07);
+        }
+        .cart-popup-close {
+            background: #eee;
+            color: var(--brand-dark);
+        }
+        .cart-popup-close:hover {
+            background: #e0d1d9;
+            color: var(--brand-accent);
+        }
+        .cart-popup-checkout {
+            background: var(--brand-accent);
+            color: #fff;
+        }
+        .cart-popup-checkout:hover {
+            background: var(--brand-dark);
+        }
+        @media (max-width: 600px) {
+            .cart-popup-content {
+                left: 50%;
+                top: 50%;
+                min-width: 220px;
+                max-width: 96vw;
+                padding: 1.3rem 0.8rem 1.3rem 0.8rem;
+            }
+        }
+    </style>
+    <script>
+        // Simple front-end cart functionality
+        let cart = [];
+        function addToCart(productTitle, price) {
+            const item = cart.find(i => i.title === productTitle);
+            if (item) {
+                item.qty += 1;
+            } else {
+                cart.push({ title: productTitle, price: price, qty: 1 });
+            }
+            renderCartPopup();
+        }
+        function removeCartItem(index) {
+            cart.splice(index, 1);
+            renderCartPopup();
+        }
+        function renderCartPopup() {
+            const cartList = document.getElementById('cart-popup-items');
+            const cartTotal = document.getElementById('cart-popup-total');
+            cartList.innerHTML = '';
+            let total = 0;
+            if (cart.length === 0) {
+                const li = document.createElement('li');
+                li.textContent = 'Cart is empty.';
+                li.style.opacity = '0.7';
+                li.style.justifyContent = 'center';
+                cartList.appendChild(li);
+            } else {
+                cart.forEach((item, idx) => {
+                    total += item.price * item.qty;
+                    const li = document.createElement('li');
+                    const titleSpan = document.createElement('span');
+                    titleSpan.className = 'cart-popup-item-title';
+                    titleSpan.textContent = `${item.title} x${item.qty} - ₱${item.price.toFixed(2)}`;
+                    li.appendChild(titleSpan);
+                    const removeBtn = document.createElement('button');
+                    removeBtn.className = 'cart-popup-item-remove';
+                    removeBtn.textContent = 'Remove';
+                    removeBtn.onclick = function() { removeCartItem(idx); };
+                    li.appendChild(removeBtn);
+                    cartList.appendChild(li);
+                });
+            }
+            cartTotal.textContent = `Total: ₱${total.toFixed(2)}`;
+        }
+        function openCartPopup() {
+            document.getElementById('cart-popup-bg').classList.add('show');
+            document.getElementById('cart-popup-content').classList.add('show');
+            renderCartPopup();
+        }
+        function closeCartPopup() {
+            document.getElementById('cart-popup-bg').classList.remove('show');
+            document.getElementById('cart-popup-content').classList.remove('show');
+        }
+        function checkout() {
+            window.location.href = 'order-summary.html';
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCartPopup();
+
+            var burger = document.getElementById('burger-btn');
+            var nav = document.getElementById('main-nav');
+            var overlay = document.getElementById('nav-overlay');
+            function toggleNav() {
+                burger.classList.toggle('active');
+                nav.classList.toggle('show');
+                overlay.classList.toggle('show');
+                if (nav.classList.contains('show')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            }
+            burger.addEventListener('click', toggleNav);
+            overlay.addEventListener('click', toggleNav);
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    nav.classList.remove('show');
+                    burger.classList.remove('active');
+                    overlay.classList.remove('show');
+                    document.body.style.overflow = '';
+                }
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && nav.classList.contains('show')) {
+                    toggleNav();
+                }
+                if (e.key === 'Escape' && document.getElementById('cart-popup-bg').classList.contains('show')) {
+                    closeCartPopup();
+                }
+            });
+
+            document.getElementById('cart-popup-bg').addEventListener('click', closeCartPopup);
+            document.getElementById('cart-fab-btn').addEventListener('click', openCartPopup);
+            document.getElementById('cart-popup-close').addEventListener('click', closeCartPopup);
+            document.getElementById('cart-popup-checkout').addEventListener('click', checkout);
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+            <div class="logo-box">
+                <div class="logo-img">
+                    <img src="image/LOGO.png" alt="Arlene Carandang Style Studio Logo">
+                </div>
+                <div class="logo-title">
+                    <span class="main">ARLENE CARANDANG</span>
+                    <span class="sub">STYLE STUDIO</span>
+                </div>
+            </div>
+            <button id="burger-btn" class="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="main-nav">
+                <a href="#about">About Us</a>
+                <a href="#products">Shop</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+        </div>
+        <div id="nav-overlay" class="nav-overlay"></div>
+    </header>
+    <main>
+        <section class="intro">
+            <h1>Welcome to Arlene Carandang Style Studio</h1>
+            <h2>“Elevate Your Everyday Fashion – One Piece at a Time”</h2>
+            <p>At Arlene Carandang Style Studio, we believe fashion is personal — and every style tells a story. Whether you're dressing for a corporate day in Makati or a casual brunch in Alabang, our curated fashion pieces bring out your confidence, flair, and Filipino pride.</p>
+            <p>We specialize in trend-forward accessories, elegant wardrobe staples, and locally inspired fashion items for modern Filipinas. With a passion for style and years of experience in personalized fashion consultation, we help our customers express who they truly are — with elegance and ease.</p>
+            <div class="slogan"> Walk in with confidence. Walk out in style.</div>
+        </section>
+        <section id="about" class="section">
+            <h3>About Us</h3>
+            <p>Rooted in Style. Made for Filipinas.<br>
+            Founded by Arlene Carandang, a lifelong fashion enthusiast and former stylist for independent film and commercial shoots, our studio started as a small neighborhood boutique in Barangay Cupang. Today, it’s a full-style hub offering carefully selected pieces for women who want to feel empowered through fashion.<br>
+            We are proudly Filipino — from the pieces we source to the inspirations behind each collection. Our goal is to make fashion accessible, fun, and personal. We take pride in providing styling advice tailored to your lifestyle, body type, and budget.</p>
+            <div class="about-values">
+                <div class="about-value"><span></span>Authenticity: We promote individuality through curated styling.</div>
+                <div class="about-value"><span></span>Community: We support local makers and Filipino fashion brands.</div>
+                <div class="about-value"><span></span>Empowerment: Every piece is selected to help you feel confident and beautiful.</div>
+            </div>
+            <blockquote style="font-size:1.12rem;color:var(--brand-accent);margin-top:1.1rem;font-family:'Quicksand',Arial,sans-serif;">
+                “Hindi kailangan ng mamahalin para maging stylish. Basta confident ka — panalo ka!”
+            </blockquote>
+        </section>
+        <section id="products" class="section">
+            <h3>Curated Collections</h3>
+            <div class="products">
+                <div class="product-card">
+                    <img src="image/placeholder1.png" alt="Women's Casual Top">
+                    <div class="product-title">Casual Blouse</div>
+                    <div class="product-desc">Stylish and comfortable for everyday wear.</div>
+                    <div class="product-meta">Qty: 10 | ₱499.00</div>
+                    <div class="product-price">₱499.00</div>
+                    <button onclick="addToCart('Casual Blouse', 499.00)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="image/placeholder2.png" alt="Elegant Dress">
+                    <div class="product-title">Elegant Dress</div>
+                    <div class="product-desc">Perfect for special occasions and events.</div>
+                    <div class="product-meta">Qty: 5 | ₱1,199.00</div>
+                    <div class="product-price">₱1,199.00</div>
+                    <button onclick="addToCart('Elegant Dress', 1199.00)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="image/placeholder3.png" alt="Filipino-made Sandals">
+                    <div class="product-title">Woven Sandals</div>
+                    <div class="product-desc">Locally made, comfortable, and stylish.</div>
+                    <div class="product-meta">Qty: 8 | ₱799.00</div>
+                    <div class="product-price">₱799.00</div>
+                    <button onclick="addToCart('Woven Sandals', 799.00)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="image/placeholder4.png" alt="Trendy Handbag">
+                    <div class="product-title">Trendy Handbag</div>
+                    <div class="product-desc">Fashionable and practical for daily use.</div>
+                    <div class="product-meta">Qty: 7 | ₱899.00</div>
+                    <div class="product-price">₱899.00</div>
+                    <button onclick="addToCart('Trendy Handbag', 899.00)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="image/placeholder5.png" alt="Jewelry Set">
+                    <div class="product-title">Jewelry Set</div>
+                    <div class="product-desc">Elegant earrings and necklace combo.</div>
+                    <div class="product-meta">Qty: 12 | ₱650.00</div>
+                    <div class="product-price">₱650.00</div>
+                    <button onclick="addToCart('Jewelry Set', 650.00)">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+        <section id="services" class="section">
+            <h3>Services</h3>
+            <ul class="services-list">
+                <li>Personal Styling Sessions (by appointment)</li>
+                <li>OOTD Consultations for Events</li>
+                <li>Gift Styling (personalized gift bags for loved ones)</li>
+                <li>Group Styling for Debuts, Barkada Shoots, and Weddings</li>
+                <li>Styling for Influencer Shoots and Content Creators</li>
+            </ul>
+            <p>We feature both in-house and partner Filipino brands. Everything is handpicked with love and practicality in mind.</p>
+        </section>
+        <section id="contact" class="section">
+            <h3>📞 Contact Us</h3>
+            <ul class="contact-list">
+                <li><strong>Visit Us:</strong> #27 Rosas Street, Barangay Cupang, City of Muntinlupa, NCR, 1771, Philippines</li>
+                <li><strong>Call/Text:</strong> +63 936 921 8475</li>
+                <li><strong>Email:</strong> <a href="mailto:contact@arlenecarandangstudio.com">contact@arlenecarandangstudio.com</a></li>
+                <li><strong>Website:</strong> <a href="https://www.arlenecarandangstudio.com" target="_blank">www.arlenecarandangstudio.com</a></li>
+                <li><strong>Business Hours:</strong> Mon-Sat: 9:00 AM – 7:00 PM | Sunday: Closed</li>
+                <li>
+                    <strong>Social:</strong>
+                    <a href="https://www.instagram.com/arlenecarandangstudio" target="_blank">@arlenecarandangstudio</a>
+                    <a href="https://www.facebook.com/arlenecarandangstudio" target="_blank">@arlenecarandangstudio</a>
+                </li>
+            </ul>
+        </section>
+        <section id="testimonials" class="section">
+            <h3>🗣 Testimonials</h3>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    “Arlene has an eye for style! She helped me choose the perfect outfit for my engagement shoot. Sulit!”
+                    <cite>– Clarisse R., Las Piñas City</cite>
+                </div>
+                <div class="testimonial-card">
+                    “Nagustuhan ko 'yung accessories collection nila — stylish pero swak sa budget!”
+                    <cite>– Mitch D., Alabang</cite>
+                </div>
+                <div class="testimonial-card">
+                    “First time ko magpa-style consult, and grabe, ang saya! Arlene made me feel so confident.”
+                    <cite>– Andrea P., Quezon City</cite>
+                </div>
+            </div>
+        </section>
+        <section id="faq" class="section">
+            <h3>📦 Delivery & FAQ</h3>
+            <div>
+                <strong>Delivery Information:</strong>
+                <ul>
+                    <li>Nationwide delivery via LBC, J&T Express, GrabExpress (Metro Manila)</li>
+                    <li>Processing: 1–2 days</li>
+                    <li>Standard shipping: 3–5 business days</li>
+                    <li>Express shipping: 1–2 business days (additional charges apply)</li>
+                </ul>
+            </div>
+            <div>
+                <strong>FAQs:</strong>
+                <ul class="faq-list">
+                    <li><strong>Q:</strong> Do you accept returns?<br><strong>A:</strong> Yes, within 7 days of receipt, provided items are unused and with tags.</li>
+                    <li><strong>Q:</strong> Do you offer cash on delivery?<br><strong>A:</strong> Yes, for Metro Manila and nearby areas. For provincial orders, GCash or bank transfer is preferred.</li>
+                    <li><strong>Q:</strong> Can I book a styling session online?<br><strong>A:</strong> Yes! Send us a message or email to schedule a personal or virtual styling appointment.</li>
+                </ul>
+            </div>
+        </section>
+        <section class="business-info">
+            <strong>Business Information<br></strong>
+            Business Name: Arlene Carandang Style Studio<br>
+            Business Type: Retail - Fashion & Accessories<br>
+            Address: #27 Rosas Street, Barangay Cupang, City of Muntinlupa, NCR, Philippines<br>
+            Phone: +63 936 921 8475<br>
+            Email: contact@arlenecarandangstudio.com<br>
+            Website: www.arlenecarandangstudio.com<br>
+            Business Hours: Monday to Saturday, 9:00 AM to 7:00 PM<br>
+            DTI Registration No.: Available upon request<br>
+            VAT Registered: Yes
+        </section>
+    </main>
+    <!-- Floating Cart Button -->
+    <button class="cart-fab" id="cart-fab-btn" aria-label="Cart">
+        <!-- Shopping cart SVG icon -->
+        <svg width="36" height="36" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M6.5 16.5C7.05228 16.5 7.5 16.9477 7.5 17.5C7.5 18.0523 7.05228 18.5 6.5 18.5C5.94772 18.5 5.5 18.0523 5.5 17.5C5.5 16.9477 5.94772 16.5 6.5 16.5ZM15.5 16.5C16.0523 16.5 16.5 16.9477 16.5 17.5C16.5 18.0523 16.0523 18.5 15.5 18.5C14.9477 18.5 14.5 18.0523 14.5 17.5C14.5 16.9477 14.9477 16.5 15.5 16.5ZM3.5 3.5H5.5L6.68 14.07C6.73417 14.5557 7.14448 14.9214 7.634 14.9214H14.366C14.8555 14.9214 15.2658 14.5557 15.32 14.07L16.5 3.5H3.5Z" stroke="#fff" stroke-width="1.5" fill="none"/>
+        </svg>
+    </button>
+    <!-- Cart Popup Overlay & Content -->
+    <div class="cart-popup-bg" id="cart-popup-bg"></div>
+    <div class="cart-popup-content" id="cart-popup-content">
+        <div class="cart-popup-header">🛒 Shopping Cart</div>
+        <ul class="cart-popup-items" id="cart-popup-items"></ul>
+        <div class="cart-popup-total" id="cart-popup-total">Total: ₱0.00</div>
+        <div class="cart-popup-actions">
+            <button class="cart-popup-close" id="cart-popup-close" type="button">Close</button>
+            <button class="cart-popup-checkout" id="cart-popup-checkout" type="button">Checkout</button>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="refund-policy.html">Refund Policy</a>
+        </div>
+        <div class="footer-info">
+            &copy; 2025 Arlene Carandang Style Studio. All rights reserved. | #27 Rosas Street, Brgy. Cupang, City of Muntinlupa, NCR, PH | Tel: +63 936 921 8475
+        </div>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/arlenecarandangstudio" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/arlenecarandangstudio" target="_blank">Facebook</a>
+        </div>
+    </footer>
+</body>
+</html>
