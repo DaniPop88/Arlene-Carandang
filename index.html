@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Arlene Carandang Style Studio</title>
     <meta name="description" content="Fashion & Accessories for Modern Filipinas. Shop curated collections, book styling sessions, and elevate your style at Arlene Carandang Style Studio.">
     <link rel="icon" type="image/png" href="image/FAVICON.png">
@@ -17,7 +17,7 @@
             --border-radius: 18px;
             --shadow: 0 8px 32px rgba(24,33,58,0.10);
             --brand-spacing: 1.7rem;
-            --gradient: linear-gradient(to right, #f8bcbc 0%, #a14e7c 100%);
+            --gradient: linear-gradient(135deg, #f8bcbc 0%, #a14e7c 100%);
             --gradient2: linear-gradient(120deg, #fff 0%, #f8bcbc 50%, #a14e7c 100%);
         }
         html, body {
@@ -26,6 +26,7 @@
             font-family: 'Montserrat', 'Quicksand', Arial, Helvetica, sans-serif;
             background: var(--brand-bg);
             color: var(--brand-dark);
+            min-height: 100vh;
         }
         header {
             background: var(--brand-light);
@@ -46,24 +47,24 @@
             justify-content: space-between;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1.6rem var(--brand-spacing) 1.2rem var(--brand-spacing);
+            padding: 1.2rem var(--brand-spacing) 1.2rem var(--brand-spacing);
             width: 100%;
         }
         .logo-box {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1.2rem;
         }
         .logo-img {
-            height: 72px;
-            width: 72px;
-            min-width: 72px;
+            height: 60px;
+            width: 60px;
+            min-width: 60px;
             display: flex;
             align-items: center;
         }
         .logo-img img {
-            height: 72px;
-            width: 72px;
+            height: 60px;
+            width: 60px;
             object-fit: contain;
             display: block;
             border: none;
@@ -77,14 +78,14 @@
             line-height: 1.1;
         }
         .logo-title .main {
-            font-size: 2.05rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--brand-dark);
-            letter-spacing: 0.03em;
+            letter-spacing: 0.02em;
             font-family: 'Montserrat', Arial, sans-serif;
         }
         .logo-title .sub {
-            font-size: 1.15rem;
+            font-size: 0.95rem;
             font-weight: 500;
             color: var(--brand-accent);
             letter-spacing: 0.41em;
@@ -93,16 +94,16 @@
         }
         nav {
             display: flex;
-            gap: 2.2rem;
+            gap: 1.7rem;
             align-items: center;
         }
         nav a {
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: var(--brand-dark);
-            padding: 0.38rem 1.1rem;
-            border-radius: 10px;
+            padding: 0.25rem 0.5rem;
+            border-radius: 8px;
             background: none;
             transition: background 0.18s, color 0.18s;
             font-family: 'Montserrat', Arial, sans-serif;
@@ -116,20 +117,20 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 47px;
-            height: 47px;
+            width: 41px;
+            height: 41px;
             cursor: pointer;
             border: none;
             background: transparent;
-            margin-left: 1.5rem;
+            margin-left: 1.2rem;
         }
         .burger span {
             display: block;
             height: 5px;
-            width: 34px;
+            width: 28px;
             background: var(--brand-dark);
             border-radius: 3px;
-            margin: 4px 0;
+            margin: 3px 0;
             transition: all 0.3s;
         }
         @media (max-width: 900px) {
@@ -137,43 +138,54 @@
                 padding: 1.2rem 0.4rem;
             }
             .products {
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             }
             .header-wrapper {
                 flex-direction: column;
-                gap: 0.6rem;
-                padding: 1.6rem 0.8rem 1.2rem 0.8rem;
+                gap: 1.1rem;
+                padding: 1.3rem 0.8rem 1.1rem 0.8rem;
             }
         }
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             .header-wrapper {
                 flex-direction: row;
-                align-items: center;
                 justify-content: space-between;
-                padding: 1.2rem 0.8rem 1.2rem 0.8rem;
+                align-items: center;
+                padding: 1.1rem 0.6rem 1.1rem 0.6rem;
+            }
+            .logo-img, .logo-img img {
+                height: 44px;
+                width: 44px;
+                min-width: 44px;
+            }
+            .logo-title .main {
+                font-size: 0.98rem;
+            }
+            .logo-title .sub {
+                font-size: 0.79rem;
             }
             nav {
                 position: fixed;
                 top: 0;
-                right: -100%;
+                right: -100vw;
                 height: 100vh;
-                width: 260px;
+                width: 80vw;
                 background: var(--brand-light);
                 box-shadow: -2px 0 12px rgba(24,33,58,0.16);
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: flex-start;
                 gap: 0;
-                padding: 5.2rem 1.3rem 1.3rem 1.3rem;
+                padding: 3.7rem 0.7rem 1.1rem 1.1rem;
                 border-radius: 0 0 0 var(--border-radius);
                 transition: right 0.32s ease;
                 z-index: 200;
             }
             nav a {
                 width: 100%;
-                margin-bottom: 1.3rem;
-                font-size: 1.17rem;
-                padding: 0.62rem 0.5rem;
+                margin-bottom: 1.1rem;
+                font-size: 1.04rem;
+                padding: 0.45rem 0.5rem;
             }
             nav.show {
                 right: 0;
@@ -182,51 +194,26 @@
                 display: flex;
             }
         }
-        @media (max-width: 600px) {
-            .logo-img, .logo-img img {
-                height: 57px;
-                width: 57px;
-                min-width: 57px;
-            }
-            .logo-title .main {
-                font-size: 1.29rem;
-            }
-            .logo-title .sub {
-                font-size: 0.93rem;
-            }
-            .intro h1 {
-                font-size: 1.57rem;
-            }
-            .cart-popup-content {
-                width: 96vw;
-                max-width: 430px;
-            }
-            .products {
-                grid-template-columns: 1fr;
-            }
-            nav {
-                width: 89vw;
-            }
-        }
         main {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
             background: var(--brand-light);
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-            padding: 2.8rem 2vw;
+            padding: 2rem 1vw 2.2rem 1vw;
         }
         .intro {
             text-align: center;
             margin-bottom: 2.5rem;
             background: var(--gradient);
             border-radius: var(--border-radius);
-            padding: 2.4rem 1.1rem 2.1rem 1.1rem;
+            padding: 2.2rem 1.1rem 2.1rem 1.1rem;
             color: var(--brand-dark);
             box-shadow: 0 2px 22px rgba(161,78,124,0.09);
+            overflow: hidden;
         }
         .intro h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--brand-dark);
             margin-bottom: 0.4rem;
@@ -235,66 +222,66 @@
         }
         .intro h2 {
             font-weight: 500;
-            font-size: 1.35rem;
+            font-size: 1.13rem;
             color: var(--brand-accent);
             margin-bottom: 1.2rem;
             letter-spacing: 0.01em;
             font-family: 'Quicksand', Arial, sans-serif;
         }
         .intro p {
-            font-size: 1.13rem;
+            font-size: 0.98rem;
             margin-bottom: 0.7rem;
             color: #444;
             font-family: 'Quicksand', Arial, sans-serif;
         }
         .intro .slogan {
             font-weight: 700;
-            font-size: 1.09rem;
+            font-size: 1.01rem;
             color: var(--brand-accent);
             margin-top: 0.7rem;
             font-family: 'Quicksand', Arial, sans-serif;
         }
         .section {
-            margin-bottom: 2.5rem;
+            margin-bottom: 2.2rem;
         }
         .section h3 {
             color: var(--brand-accent);
-            margin-bottom: 1.1rem;
-            font-size: 1.42rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
             font-weight: 700;
             font-family: 'Montserrat', Arial, sans-serif;
         }
         .about-values {
             display: flex;
             flex-wrap: wrap;
-            gap: 2rem;
+            gap: 1.1rem;
             margin-top: 1rem;
         }
         .about-value {
             flex: 1 1 220px;
             background: var(--brand-bg);
             border-radius: var(--border-radius);
-            padding: 1.15rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 1px 8px rgba(24,33,58,0.05);
-            font-size: 1.09rem;
+            padding: 0.9rem;
+            margin-bottom: 0.7rem;
+            box-shadow: 0 1px 8px rgba(24,33,58,0.03);
+            font-size: 0.98rem;
             color: var(--brand-dark);
             font-family: 'Quicksand', Arial, sans-serif;
         }
         .about-value span {
-            font-size: 1.7rem;
-            margin-right: 0.6rem;
+            font-size: 1.3rem;
+            margin-right: 0.45rem;
         }
         .products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2.1rem;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1.2rem;
         }
         .product-card {
             background: var(--gradient2);
             border-radius: var(--border-radius);
             box-shadow: 0 2px 16px rgba(161,78,124,0.13);
-            padding: 1.3rem 1.2rem 1.3rem 1.2rem;
+            padding: 1rem 1rem 1rem 1rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -305,11 +292,11 @@
         }
         .product-card img {
             width: 100%;
-            max-width: 170px;
-            height: 170px;
+            max-width: 140px;
+            height: 140px;
             object-fit: cover;
             border-radius: var(--border-radius);
-            margin-bottom: 0.9rem;
+            margin-bottom: 0.7rem;
             background: #dadada;
             box-shadow: 0 2px 14px rgba(24,33,58,0.08);
         }
@@ -317,38 +304,38 @@
             font-weight: 700;
             color: var(--brand-dark);
             margin-bottom: 0.3rem;
-            font-size: 1.12rem;
+            font-size: 1.02rem;
             text-align: center;
             font-family: 'Montserrat', Arial, sans-serif;
         }
         .product-desc {
-            font-size: 1.02rem;
+            font-size: 0.93rem;
             color: #444;
             margin-bottom: 0.2rem;
             text-align: center;
             font-family: 'Quicksand', Arial, sans-serif;
         }
         .product-meta {
-            font-size: 0.97rem;
+            font-size: 0.92rem;
             color: #666;
-            margin-bottom: 0.7rem;
+            margin-bottom: 0.5rem;
             text-align: center;
             font-family: 'Quicksand', Arial, sans-serif;
         }
         .product-price {
-            font-size: 1.15rem;
+            font-size: 1.03rem;
             font-weight: 700;
             color: var(--brand-accent);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
             font-family: 'Montserrat', Arial, sans-serif;
         }
         .product-card button {
-            padding: 0.6rem 1.32rem;
+            padding: 0.45rem 1.1rem;
             background: var(--brand-accent);
             color: #fff;
             border: none;
-            border-radius: 9px;
-            font-size: 1.03rem;
+            border-radius: 8px;
+            font-size: 0.99rem;
             cursor: pointer;
             font-weight: 700;
             letter-spacing: 0.02em;
@@ -370,73 +357,74 @@
         .services-list li,
         .contact-list li,
         .faq-list li {
-            margin-bottom: 0.7rem;
-            font-size: 1.04rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.97rem;
             font-family: 'Quicksand', Arial, sans-serif;
         }
         .testimonials {
             display: flex;
             flex-wrap: wrap;
-            gap: 2rem;
+            gap: 1.1rem;
         }
         .testimonial-card {
-            flex: 1 1 270px;
+            flex: 1 1 150px;
             background: var(--brand-bg);
             border-radius: var(--border-radius);
             box-shadow: 0 2px 18px rgba(24,33,58,0.13);
-            padding: 1.2rem;
-            margin-bottom: 1rem;
+            padding: 0.9rem;
+            margin-bottom: 0.6rem;
             font-style: italic;
-            font-size: 1.12rem;
+            font-size: 0.98rem;
             font-family: 'Quicksand', Arial, sans-serif;
             border-left: 8px solid var(--brand-accent2);
         }
         .testimonial-card cite {
             display: block;
             margin-top: 0.7rem;
-            font-size: 1.03rem;
+            font-size: 0.93rem;
             color: var(--brand-accent);
             font-style: normal;
         }
         .business-info {
             background: var(--brand-bg);
             border-radius: var(--border-radius);
-            padding: 1.15rem 1rem 1.15rem 1rem;
-            margin-bottom: 2rem;
-            font-size: 1.07rem;
+            padding: 0.9rem 0.7rem 0.9rem 0.7rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.98rem;
             font-family: 'Quicksand', Arial, sans-serif;
         }
         footer {
             background: var(--brand-dark);
             color: #fff;
             text-align: center;
-            padding: 1.3rem 0 0.7rem 0;
+            padding: 1.1rem 0 0.7rem 0;
             margin-top: 2.5rem;
             border-radius: var(--border-radius) var(--border-radius) 0 0;
             box-shadow: 0 -2px 18px rgba(24,33,58,0.07);
+            font-size: 0.95rem;
         }
         .footer-links {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
         .footer-links a {
             color: #fff;
             text-decoration: underline;
-            margin: 0 1.1rem;
-            font-size: 1.1rem;
+            margin: 0 0.7rem;
+            font-size: 1.03rem;
             font-family: 'Montserrat', Arial, sans-serif;
         }
         .footer-links a:hover {
             color: var(--brand-accent2);
         }
         .footer-info {
-            font-size: 1.03rem;
-            margin-bottom: 0.6rem;
+            font-size: 0.97rem;
+            margin-bottom: 0.5rem;
             font-family: 'Quicksand', Arial, sans-serif;
         }
         .footer-social a {
             color: var(--brand-accent2);
-            margin: 0 0.56rem;
-            font-size: 1.14rem;
+            margin: 0 0.4rem;
+            font-size: 1.09rem;
             text-decoration: none;
             font-family: 'Montserrat', Arial, sans-serif;
         }
@@ -444,13 +432,13 @@
             color: #fff;
         }
         .burger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
+            transform: rotate(45deg) translate(6px, 6px);
         }
         .burger.active span:nth-child(2) {
             opacity: 0;
         }
         .burger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(8px, -8px);
+            transform: rotate(-45deg) translate(6px, -6px);
         }
         .nav-overlay {
             display: none;
@@ -462,43 +450,31 @@
         .nav-overlay.show {
             display: block;
         }
-        /* Floating Cart Button Styles */
         .cart-fab {
             position: fixed;
-            bottom: 36px;
-            right: 36px;
+            bottom: 18px;
+            right: 18px;
             z-index: 999;
             background: var(--brand-accent);
             color: #fff;
             border: none;
             border-radius: 50%;
-            width: 70px;
-            height: 70px;
+            width: 54px;
+            height: 54px;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 8px 32px rgba(161,78,124,0.23);
             cursor: pointer;
             transition: background 0.22s, box-shadow 0.22s, transform 0.16s;
-            font-size: 2.4rem;
-            border: 4px solid var(--brand-light);
+            font-size: 1.7rem;
+            border: 2px solid var(--brand-light);
         }
         .cart-fab:hover {
             background: var(--brand-dark);
             box-shadow: 0 12px 38px rgba(24,33,58,0.27);
             transform: scale(1.07);
         }
-        @media (max-width: 600px) {
-            .cart-fab {
-                bottom: 18px;
-                right: 18px;
-                width: 54px;
-                height: 54px;
-                font-size: 1.7rem;
-                border-width: 2px;
-            }
-        }
-        /* Cart Popup Styles */
         .cart-popup-bg {
             display: none;
             position: fixed;
@@ -517,9 +493,9 @@
             background: var(--brand-light);
             border-radius: var(--border-radius);
             box-shadow: 0 8px 38px rgba(24,33,58,0.23);
-            min-width: 370px;
-            max-width: 410px;
-            padding: 2.1rem 1.5rem 1.3rem 1.5rem;
+            min-width: 92vw;
+            max-width: 98vw;
+            padding: 1.3rem 0.8rem 1.3rem 0.8rem;
             z-index: 2002;
             display: none;
             flex-direction: column;
@@ -533,7 +509,7 @@
             to { transform: translate(-50%, 0) scale(1); opacity: 1; }
         }
         .cart-popup-header {
-            font-size: 1.23rem;
+            font-size: 1.06rem;
             font-weight: 700;
             color: var(--brand-dark);
             margin-bottom: 0.67rem;
@@ -554,10 +530,10 @@
             align-items: center;
             justify-content: space-between;
             list-style: none;
-            font-size: 1.09rem;
+            font-size: 0.97rem;
             margin-bottom: 0.34rem;
             color: var(--brand-dark);
-            padding: 0.55rem 1rem;
+            padding: 0.3rem 0.4rem;
             border-bottom: 1px solid #ececec;
         }
         .cart-popup-items li:last-child {
@@ -587,20 +563,20 @@
             font-weight: 700;
             color: var(--brand-accent);
             margin-bottom: 1.2rem;
-            font-size: 1.14rem;
+            font-size: 1.03rem;
             font-family: 'Montserrat', Arial, sans-serif;
         }
         .cart-popup-actions {
             display: flex;
             justify-content: flex-end;
-            gap: 0.7rem;
+            gap: 0.2rem;
         }
         .cart-popup-close,
         .cart-popup-checkout {
-            padding: 0.75rem 1.4rem;
+            font-size: 0.95rem;
+            padding: 0.55rem 1rem;
             border-radius: 12px;
             font-weight: 700;
-            font-size: 1.07rem;
             border: none;
             cursor: pointer;
             transition: background 0.22s;
@@ -622,18 +598,8 @@
         .cart-popup-checkout:hover {
             background: var(--brand-dark);
         }
-        @media (max-width: 600px) {
-            .cart-popup-content {
-                left: 50%;
-                top: 50%;
-                min-width: 220px;
-                max-width: 96vw;
-                padding: 1.3rem 0.8rem 1.3rem 0.8rem;
-            }
-        }
     </style>
     <script>
-        // Simple front-end cart functionality
         let cart = [];
         function addToCart(productTitle, price) {
             const item = cart.find(i => i.title === productTitle);
@@ -736,6 +702,7 @@
         <div class="header-wrapper">
             <div class="logo-box">
                 <div class="logo-img">
+                    <!-- LOGO: Reference image2 -->
                     <img src="image/LOGO.png" alt="Arlene Carandang Style Studio Logo">
                 </div>
                 <div class="logo-title">
@@ -764,24 +731,24 @@
             <h2>“Elevate Your Everyday Fashion – One Piece at a Time”</h2>
             <p>At Arlene Carandang Style Studio, we believe fashion is personal — and every style tells a story. Whether you're dressing for a corporate day in Makati or a casual brunch in Alabang, our curated fashion pieces bring out your confidence, flair, and Filipino pride.</p>
             <p>We specialize in trend-forward accessories, elegant wardrobe staples, and locally inspired fashion items for modern Filipinas. With a passion for style and years of experience in personalized fashion consultation, we help our customers express who they truly are — with elegance and ease.</p>
-            <div class="slogan"> Walk in with confidence. Walk out in style.</div>
+            <div class="slogan">✨ Walk in with confidence. Walk out in style.</div>
         </section>
         <section id="about" class="section">
-            <h3>About Us</h3>
+            <h3>👗 About Us</h3>
             <p>Rooted in Style. Made for Filipinas.<br>
             Founded by Arlene Carandang, a lifelong fashion enthusiast and former stylist for independent film and commercial shoots, our studio started as a small neighborhood boutique in Barangay Cupang. Today, it’s a full-style hub offering carefully selected pieces for women who want to feel empowered through fashion.<br>
             We are proudly Filipino — from the pieces we source to the inspirations behind each collection. Our goal is to make fashion accessible, fun, and personal. We take pride in providing styling advice tailored to your lifestyle, body type, and budget.</p>
             <div class="about-values">
-                <div class="about-value"><span></span>Authenticity: We promote individuality through curated styling.</div>
-                <div class="about-value"><span></span>Community: We support local makers and Filipino fashion brands.</div>
-                <div class="about-value"><span></span>Empowerment: Every piece is selected to help you feel confident and beautiful.</div>
+                <div class="about-value"><span>🌿</span>Authenticity: We promote individuality through curated styling.</div>
+                <div class="about-value"><span>🤝</span>Community: We support local makers and Filipino fashion brands.</div>
+                <div class="about-value"><span>💖</span>Empowerment: Every piece is selected to help you feel confident and beautiful.</div>
             </div>
-            <blockquote style="font-size:1.12rem;color:var(--brand-accent);margin-top:1.1rem;font-family:'Quicksand',Arial,sans-serif;">
+            <blockquote style="font-size:1.05rem;color:var(--brand-accent);margin-top:1rem;font-family:'Quicksand',Arial,sans-serif;">
                 “Hindi kailangan ng mamahalin para maging stylish. Basta confident ka — panalo ka!”
             </blockquote>
         </section>
         <section id="products" class="section">
-            <h3>Curated Collections</h3>
+            <h3>👜 Curated Collections</h3>
             <div class="products">
                 <div class="product-card">
                     <img src="image/placeholder1.png" alt="Women's Casual Top">
@@ -826,7 +793,7 @@
             </div>
         </section>
         <section id="services" class="section">
-            <h3>Services</h3>
+            <h3>🎯 Services</h3>
             <ul class="services-list">
                 <li>Personal Styling Sessions (by appointment)</li>
                 <li>OOTD Consultations for Events</li>
@@ -901,14 +868,11 @@
             VAT Registered: Yes
         </section>
     </main>
-    <!-- Floating Cart Button -->
     <button class="cart-fab" id="cart-fab-btn" aria-label="Cart">
-        <!-- Shopping cart SVG icon -->
         <svg width="36" height="36" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path d="M6.5 16.5C7.05228 16.5 7.5 16.9477 7.5 17.5C7.5 18.0523 7.05228 18.5 6.5 18.5C5.94772 18.5 5.5 18.0523 5.5 17.5C5.5 16.9477 5.94772 16.5 6.5 16.5ZM15.5 16.5C16.0523 16.5 16.5 16.9477 16.5 17.5C16.5 18.0523 16.0523 18.5 15.5 18.5C14.9477 18.5 14.5 18.0523 14.5 17.5C14.5 16.9477 14.9477 16.5 15.5 16.5ZM3.5 3.5H5.5L6.68 14.07C6.73417 14.5557 7.14448 14.9214 7.634 14.9214H14.366C14.8555 14.9214 15.2658 14.5557 15.32 14.07L16.5 3.5H3.5Z" stroke="#fff" stroke-width="1.5" fill="none"/>
         </svg>
     </button>
-    <!-- Cart Popup Overlay & Content -->
     <div class="cart-popup-bg" id="cart-popup-bg"></div>
     <div class="cart-popup-content" id="cart-popup-content">
         <div class="cart-popup-header">🛒 Shopping Cart</div>
