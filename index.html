@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Arlene Carandang Style Studio</title>
     <meta name="description" content="Fashion & Accessories for Modern Filipinas. Shop curated collections, book styling sessions, and elevate your style at Arlene Carandang Style Studio.">
-    <link rel="icon" type="image/png" href="image/FAVICON.png">
+    <link rel="icon" type="image/png" href="image/LOGO.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Quicksand:500,700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -28,6 +28,9 @@
             color: var(--brand-dark);
             min-height: 100vh;
         }
+        body {
+            position: relative;
+        }
         header {
             background: var(--brand-light);
             box-shadow: var(--shadow);
@@ -36,7 +39,7 @@
             top: 0;
             left: 0;
             right: 0;
-            z-index: 100;
+            z-index: 1100;
             width: 100%;
             transition: box-shadow 0.3s;
             border-bottom: 4px solid var(--brand-accent2);
@@ -49,6 +52,7 @@
             margin: 0 auto;
             padding: 1.2rem var(--brand-spacing) 1.2rem var(--brand-spacing);
             width: 100%;
+            background: var(--brand-light);
         }
         .logo-box {
             display: flex;
@@ -152,6 +156,7 @@
                 justify-content: space-between;
                 align-items: center;
                 padding: 1.1rem 0.6rem 1.1rem 0.6rem;
+                background: var(--brand-light);
             }
             .logo-img, .logo-img img {
                 height: 44px;
@@ -454,7 +459,7 @@
             position: fixed;
             bottom: 18px;
             right: 18px;
-            z-index: 999;
+            z-index: 1200;
             background: var(--brand-accent);
             color: #fff;
             border: none;
@@ -598,6 +603,25 @@
         .cart-popup-checkout:hover {
             background: var(--brand-dark);
         }
+        /* Sticky fix for mobile header and cart button */
+        @media (max-width: 600px) {
+            header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1100;
+            }
+            main {
+                padding-top: 70px;
+            }
+            .cart-fab {
+                position: fixed;
+                bottom: 18px;
+                right: 18px;
+                z-index: 1200;
+            }
+        }
     </style>
     <script>
         let cart = [];
@@ -722,7 +746,7 @@
                 <a href="#contact">Contact</a>
                 <a href="#faq">FAQ</a>
             </nav>
-        </div>
+        </div>                                                                                                                    
         <div id="nav-overlay" class="nav-overlay"></div>
     </header>
     <main>
@@ -751,7 +775,7 @@
             <h3>👜 Curated Collections</h3>
             <div class="products">
                 <div class="product-card">
-                    <img src="image/placeholder1.png" alt="Women's Casual Top">
+                    <img src="image/Pictures1.png" alt="Women's Casual Top">
                     <div class="product-title">Casual Blouse</div>
                     <div class="product-desc">Stylish and comfortable for everyday wear.</div>
                     <div class="product-meta">Qty: 10 | ₱499.00</div>
@@ -759,7 +783,7 @@
                     <button onclick="addToCart('Casual Blouse', 499.00)">Add to Cart</button>
                 </div>
                 <div class="product-card">
-                    <img src="image/placeholder2.png" alt="Elegant Dress">
+                    <img src="image/Pictures2.png" alt="Elegant Dress">
                     <div class="product-title">Elegant Dress</div>
                     <div class="product-desc">Perfect for special occasions and events.</div>
                     <div class="product-meta">Qty: 5 | ₱1,199.00</div>
@@ -767,7 +791,7 @@
                     <button onclick="addToCart('Elegant Dress', 1199.00)">Add to Cart</button>
                 </div>
                 <div class="product-card">
-                    <img src="image/placeholder3.png" alt="Filipino-made Sandals">
+                    <img src="image/Pictures3.png" alt="Filipino-made Sandals">
                     <div class="product-title">Woven Sandals</div>
                     <div class="product-desc">Locally made, comfortable, and stylish.</div>
                     <div class="product-meta">Qty: 8 | ₱799.00</div>
@@ -775,7 +799,7 @@
                     <button onclick="addToCart('Woven Sandals', 799.00)">Add to Cart</button>
                 </div>
                 <div class="product-card">
-                    <img src="image/placeholder4.png" alt="Trendy Handbag">
+                    <img src="image/Pictures4.png" alt="Trendy Handbag">
                     <div class="product-title">Trendy Handbag</div>
                     <div class="product-desc">Fashionable and practical for daily use.</div>
                     <div class="product-meta">Qty: 7 | ₱899.00</div>
@@ -783,7 +807,7 @@
                     <button onclick="addToCart('Trendy Handbag', 899.00)">Add to Cart</button>
                 </div>
                 <div class="product-card">
-                    <img src="image/placeholder5.png" alt="Jewelry Set">
+                    <img src="image/Pictures5.png" alt="Jewelry Set">
                     <div class="product-title">Jewelry Set</div>
                     <div class="product-desc">Elegant earrings and necklace combo.</div>
                     <div class="product-meta">Qty: 12 | ₱650.00</div>
